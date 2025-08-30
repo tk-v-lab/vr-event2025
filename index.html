@@ -196,13 +196,36 @@
             color: var(--primary-color);
         }
 
+        .header-logo {
+            max-width: 250px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 15px;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .header-logo {
+                max-width: 180px;
+            }
+            .intro-card, .event-card, .highlight-item, .spec-card {
+                padding: 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <img src="素材/s-Voxel_Rangers_NBGW.png" alt="Voxel Rangers Logo" style="max-width: 250px; margin-bottom: 20px;">
+            <img src="素材/s-Voxel_Rangers_NBGW.png" alt="Voxel Rangers Logo" class="header-logo">
             
             <h1>VoxelRangers<br>クリエイター交流フェス 2025</h1>
             <p>グッズ提供：The Sandbox</p>
