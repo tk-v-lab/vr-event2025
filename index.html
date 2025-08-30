@@ -9,17 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #1a1a1a;
             --text-color: #f0f0f0;
-            --primary-color: #00aaff;
-            --secondary-color: #ff3b30;
-            --card-bg: #2c2c2e;
-            --border-color: #444;
+            --primary-color: #fbc2eb;
+            --secondary-color: #a6c1ee;
+            --card-bg: rgba(22, 22, 22, 0.7);
+            --border-color: rgba(255, 255, 255, 0.2);
         }
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: var(--bg-color);
+            background: linear-gradient(135deg, #2b1055, #7597de);
             color: var(--text-color);
             margin: 0;
             padding: 0;
@@ -78,8 +77,9 @@
             transform: translateX(-50%);
         }
 
-        .intro-card, .event-card {
+        .intro-card, .event-card, .highlight-item, .spec-card {
             background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 12px;
             margin-bottom: 30px;
@@ -105,16 +105,14 @@
         }
 
         .highlight-item {
-            background-color: var(--card-bg);
             padding: 25px;
-            border-radius: 12px;
             border-left: 5px solid var(--primary-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .highlight-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 170, 255, 0.2);
+            box-shadow: 0 8px 25px rgba(251, 194, 235, 0.2);
         }
 
         .highlight-item h3 {
@@ -125,7 +123,7 @@
         .cta-button {
             display: inline-block;
             background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: #fff;
+            color: #000;
             padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
@@ -152,7 +150,7 @@
         }
         
         ul li {
-            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2300aaff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center;
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23fbc2eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center;
             padding-left: 35px;
             margin-bottom: 15px;
         }
@@ -167,9 +165,6 @@
         .spec-card {
             flex: 1;
             min-width: 280px;
-            background-color: var(--card-bg);
-            padding: 25px;
-            border-radius: 12px;
         }
         
         .spec-card h3 {
@@ -180,8 +175,14 @@
         footer {
             text-align: center;
             padding: 40px 20px;
-            background-color: #111;
+            background-color: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
             margin-top: 40px;
+        }
+        
+        footer h2 {
+            position: static;
+            transform: none;
         }
         
         footer p {
@@ -202,7 +203,7 @@
     <header>
         <div class="container">
             <p class="subtitle">クリエイターの、クリエイターによる、クリエイターのための祭典</p>
-            <h1>VoxelRangers クリエイター交流フェス 2025</h1>
+            <h1>VoxelRangers<br>クリエイター交流フェス 2025</h1>
             <p>グッズ提供：The Sandbox</p>
         </div>
     </header>
@@ -214,7 +215,7 @@
                 <h2>クリエイターの皆様へ、感謝を込めて</h2>
                 <p>長きにわたりThe Sandboxの世界を創り上げてきたクリエイターの皆様、いつも素晴らしい作品と情熱をありがとうございます。 Voxel Rangersは、日頃の感謝と労いを込めて、クリエイター交流フェスを開催します。 オンラインで繋がっていた仲間とリアルで交流し、新たなクリエイティブの可能性を広げませんか？</p>
                 <div class="center-text">
-                    <img src="https://via.placeholder.com/700x300/2c2c2e/FFFFFF?text=Creative+Community" alt="クリエイターコミュニティのイメージ" style="border-radius: 8px; max-width: 100%; margin-top: 20px;">
+                    <img src="素材/A.jpg" alt="クリエイターコミュニティのイメージ" style="border-radius: 8px; max-width: 100%; margin-top: 20px;">
                 </div>
             </div>
         </section>
@@ -235,6 +236,10 @@
 
         <section id="highlights">
             <h2>目的と見どころ</h2>
+            <div class="center-text" style="margin-bottom: 40px;">
+                <img src="素材/B.png" alt="イベントの目的" style="border-radius: 8px; max-width: 100%; max-height: 400px;">
+                <p style="margin-top: 15px; font-size: 1.1rem;">このイベントは、クリエイター同士の交流を深め、コミュニティをさらに盛り上げることを目的としています。</p>
+            </div>
             <div class="highlight-grid">
                 <div class="highlight-item">
                     <h3>🤝 交流の促進</h3>
