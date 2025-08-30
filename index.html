@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoxelRangers クリエイター交流フェス 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --primary-color: #00aaff;
+            --secondary-color: #ff3b30;
+            --card-bg: #2c2c2e;
+            --border-color: #444;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1200x600/000000/FFFFFF?text=VoxelRangers') no-repeat center center/cover;
+            border-bottom: 5px solid var(--primary-color);
+        }
+
+        header h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3.5rem;
+            color: #fff;
+            margin: 0;
+            text-shadow: 0 0 15px var(--primary-color);
+        }
+
+        header .subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 60px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            width: auto;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+        }
+
+        .intro-card, .event-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 10px 20px;
+        }
+
+        .event-details dt {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .highlight-item {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .highlight-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 170, 255, 0.2);
+        }
+
+        .highlight-item h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+        }
+        
+        .center-text {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        ul li {
+            background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%2300aaff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>') no-repeat left center;
+            padding-left: 35px;
+            margin-bottom: 15px;
+        }
+        
+        .specs-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .spec-card {
+            flex: 1;
+            min-width: 280px;
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+        }
+        
+        .spec-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #111;
+            margin-top: 40px;
+        }
+        
+        footer p {
+            margin: 0;
+        }
+        
+        .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <p class="subtitle">クリエイターの、クリエイターによる、クリエイターのための祭典</p>
+            <h1>VoxelRangers クリエイター交流フェス 2025</h1>
+            <p>グッズ提供：The Sandbox</p>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section id="intro">
+            <div class="intro-card">
+                <h2>クリエイターの皆様へ、感謝を込めて</h2>
+                <p>長きにわたりThe Sandboxの世界を創り上げてきたクリエイターの皆様、いつも素晴らしい作品と情熱をありがとうございます。 Voxel Rangersは、日頃の感謝と労いを込めて、クリエイター交流フェスを開催します。 オンラインで繋がっていた仲間とリアルで交流し、新たなクリエイティブの可能性を広げませんか？</p>
+                <div class="center-text">
+                    <img src="https://via.placeholder.com/700x300/2c2c2e/FFFFFF?text=Creative+Community" alt="クリエイターコミュニティのイメージ" style="border-radius: 8px; max-width: 100%; margin-top: 20px;">
+                </div>
+            </div>
+        </section>
+
+        <section id="overview">
+            <h2>イベント概要</h2>
+            <div class="event-card">
+                <dl class="event-details">
+                    <dt>イベント名</dt><dd>VoxelRangers クリエイター交流フェス 2025</dd>
+                    <dt>開催日</dt><dd>2025年10月12日（日）</dd>
+                    <dt>時間</dt><dd>13:30 開場 / 14:00 開始 / 17:00 終了</dd>
+                    <dt>場所</dt><dd>イルミCafe (東京都板橋区中板橋25-12)</dd>
+                    <dt>参加方法</dt><dd>現地参加</dd>
+                    <dt>参加費</dt><dd>イベント参加：無料<br>※その後の二次会は補助が出て2,000円で参加できます。(会場：池袋予定)</dd>
+                </dl>
+            </div>
+        </section>
+
+        <section id="highlights">
+            <h2>目的と見どころ</h2>
+            <div class="highlight-grid">
+                <div class="highlight-item">
+                    <h3>🤝 交流の促進</h3>
+                    <p>オフラインだからこそ話せる制作秘話やアイデアを共有し、クリエイター同士の絆を深めます。</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>🎮 スキルと作品の共有</h3>
+                    <p>ゲーム大会や観戦を通じて、制作技術やゲームプレイの魅力を存分に楽しめます。</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>✨ 初心者大歓迎</h3>
+                    <p>The Sandboxに興味がある方なら誰でも大歓迎！安心して楽しめるコンテンツをご用意しています。</p>
+                </div>
+                <div class="highlight-item">
+                    <h3>🏆 特別対戦＆豪華景品</h3>
+                    <p>会場とオンラインを繋ぐ特別対戦！イベントの最後には全員が景品を持ち帰れるビンゴ大会も実施します。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="for-who">
+            <h2>こんな方におすすめ</h2>
+            <ul>
+                <li>The Sandboxプレイヤーの皆様</li>
+                <li>ボクセルアーティスト、メタバースクリエイター</li>
+                <li>ゲーム制作やクリエイティブ活動に興味がある方</li>
+                <li>新しいコミュニティを探している方</li>
+            </ul>
+        </section>
+
+        <section id="register">
+            <h2>参加方法と注意事項</h2>
+            <div class="intro-card">
+                <h3>▼ 参加申込</h3>
+                <p>Googleフォームのリンクからお申し込みください。応募多数の場合は先着順となります。<br><strong>申込期限：9月30日</strong></p>
+                <div class="center-text">
+                    <a href="#" class="cta-button">今すぐ申し込む (Google Form)</a>
+                </div>
+                <h3 style="margin-top: 40px;">▼ 注意事項</h3>
+                <p><strong>キャンセルポリシー：</strong> 二次会にお申し込み後、キャンセルされる場合は必ずイベント前々日までにご連絡ください。無断での欠席は、今後のイベント参加をお断りする場合があります。</p>
+                <p><strong>持ち物：</strong> ゲーム大会に参加される方は、ノートPCを必ずご持参ください。(電源アダプター、マウス、ヘッドセット等も含む)</p>
+            </div>
+        </section>
+        
+        <section id="specs">
+            <h2>ゲーム参加推奨スペック</h2>
+            <div class="specs-container">
+                <div class="spec-card">
+                    <h3>Windows</h3>
+                    <ul>
+                        <li>OS: Windows 11</li>
+                        <li>CPU: クアッドコア 3GHz</li>
+                        <li>メモリ: 8GB RAM</li>
+                        <li>グラフィックス: 4GB VRAM (専用GPU推奨)</li>
+                        <li>DirectX: Version 11</li>
+                        <li>ストレージ: 2GB以上の空き容量</li>
+                    </ul>
+                </div>
+                <div class="spec-card">
+                    <h3>macOS</h3>
+                     <ul>
+                        <li>M1以降のApple Silicon搭載モデル</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <h2>お問い合わせ</h2>
+            <p>ご不明な点がございましたら、お気軽にご連絡ください。</p>
+            <p><strong>Email:</strong> voxelrangersevent@gmail.com</p>
+            <div class="social-links">
+                <a href="#" target="_blank">X (旧Twitter)</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.9rem; color: #888;">ハッシュタグ: #VoxelRangers #TheSandboxJapan #クリエイター交流フェス</p>
+        </div>
+    </footer>
+
+</body>
+</html>
